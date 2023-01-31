@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeveloperController;
+use App\Http\Controllers\AbsentController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,6 @@ Auth::routes();
 Route::get('/developer',[DeveloperController::class,'index'])->name('Developer');
 Route::get('/developer/create',[DeveloperController::class,'create']);
 Route::post('/developer/store',[DeveloperController::class,'store']);
+Route::get('/Absent',[AbsentController::class,'index'])->name('Absent');
+Route::get('/Employee',[EmployeeController::class,'index'])->name('Employee');
+Route::get('/create',[AbsentController::class,'create']);
