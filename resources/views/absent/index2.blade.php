@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
 @section('header')
-<h5>
-    Management Absent
-</h5>
+<h2>
+    Absent
+</h2>
 @endsection
 @section('content')
-
 <table class="table table-hover text-nowrap">
     <thead>
         <tr>
@@ -18,14 +17,20 @@
         </tr>
     </thead>
     <tbody>
+        @php
+        $no = 1;
+        @endphp
         @foreach ($absents as $absent)
         <tr>
-            <td>{{$absent -> id }}</td>
+            <td>{{ $no }}</td>
             <td>{{$absent -> date }}</td>
             <td>{{$absent -> time_in }}</td>
             <td>{{$absent -> time_out }}</td>
             <td>{{$absent -> note }}</td>
         </tr>
+        @php
+         $no++;
+         @endphp
         @endforeach
     </tbody>
 
